@@ -9,7 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-KeyPem/
+./KeyPem/password.txt
 build/
 develop-eggs/
 dist/
