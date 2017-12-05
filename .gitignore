@@ -10,6 +10,7 @@ __pycache__/
 .Python
 env/
 ./KeyPem/password.txt/
+./KeyPem/FitKitKey.pem/
 build/
 develop-eggs/
 dist/
