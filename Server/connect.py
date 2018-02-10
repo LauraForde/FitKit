@@ -25,3 +25,6 @@ doc = {
 }
 
 db.save(doc)
+
+for db in couch:
+    print(db)
