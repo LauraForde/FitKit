@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <title>Here's My Story</title>
+
+	  <!-- Logo created using logomkr.com-->
+	  <link rel="shortcut icon" href="{{ url_for('static', filename='logo3.png') }}"/>
+
+	 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Bootstrap Navbar contain logo with link to homapge -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" id="logo"><img src="{{ url_for('static', filename='logo.png') }}"></i></a>
+    </div>
+    <ul class="nav navbar-nav" style="font-size: 18px;">
+      <li><a href="#" id="home" style="color: red">Home</a></li>
+      <li><a href="#" id="stories" style="color: red">Stories</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right"  style="font-size: 18px;">
+     <li><a href="#" id="about" style="color: red">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<center>
+{% if people %}
+
+<!--looping out each story in the database -->
+    {% for p in people %} 
+    
+  
+      <div class="card card-outline-danger text-xs-center">
+      <div class="card-block" style="width: 800px;">
+      <blockquote class="card-blockquote" >
+      <!-- Printing out the story -->
+   <li class="list-group-item">{{ p.people }} </li>
+   <!-- printing out the date and time along with the story -->
+
+
+  </blockquote>
+</div>
+</div>
+
+
+    {% endfor %}
+
+  {% endif %}
+</center>
+
+</body>
+</html>
