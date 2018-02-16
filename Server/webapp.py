@@ -27,5 +27,6 @@ def hello():
     return render_template("home.html", people = poster)
 
 
+
 if __name__ == "__main__":
     app.run(debug = False)

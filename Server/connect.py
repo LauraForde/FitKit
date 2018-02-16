@@ -3,10 +3,19 @@ import couchdb
 couch = couchdb.Server('http://localhost:5984')
 
 # Use existing datbase
-db = couch.create('people')
+dbname = "people"
+
+if dbname in couch:
+    db = couch[dbname]
+else:
+    db = couch.create(dbname)
 
 doc = {'person': 'Riona'}
-doc1 = {'person': 'Ervin'}
+
+db = couch['people']
+doc = {'person': 'Ervin'}
+
+for item in db.view('designDoc/new-view'):
+    print(item.key, item.id, item.value)
 
 db.save(doc)
-db.save(doc1)
