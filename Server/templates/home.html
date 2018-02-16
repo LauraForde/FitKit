@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	  <title>Here's My Story</title>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Here's My Story</title>
 
-	  <!-- Logo created using logomkr.com-->
-	  <link rel="shortcut icon" href="{{ url_for('static', filename='logo3.png') }}"/>
+    <!-- Logo created using logomkr.com-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo3.png') }}"/>
 
-	 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Bootstrap Navbar contain logo with link to homapge -->
+<!-- Bootstrap Navbar containg logo with link to homepage -->
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="logo"><img src="{{ url_for('static', filename='logo.png') }}"></i></a>
+      <a class="navbar-brand" href="#" id="logo"><img src="{{ url_for('static', filename='logo.png') }}"></a>
     </div>
     <ul class="nav navbar-nav" style="font-size: 18px;">
-      <li><a href="#" id="home" style="color: red">Home</a></li>
+      <li ><a href="#" id="home" style="color: red">Home</a></li>
       <li><a href="#" id="stories" style="color: red">Stories</a></li>
-      </ul>
+           </ul>
       <ul class="nav navbar-nav navbar-right"  style="font-size: 18px;">
      <li><a href="#" id="about" style="color: red">About</a></li>
     </ul>
+
   </div>
 </nav>
 
-<center>
-{% if people %}
+
+  <center>
+    <h2 style="color: red">
+     <i><b>
+        All Stories
+      </b> </i>
+    </h2>
+    <div></div>
+
+    <!-- Adapted from https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates -->
+
+<!-- if there are any stories in the database print them out -->
+  {% if ppl %}
 
 <!--looping out each story in the database -->
-    {% for p in people %} 
+    {% for p in ppl %} 
     
   
       <div class="card card-outline-danger text-xs-center">
       <div class="card-block" style="width: 800px;">
       <blockquote class="card-blockquote" >
       <!-- Printing out the story -->
-   <li class="list-group-item">{{ p.people }} </li>
+   <li class="list-group-item">{{ p.person }} </li>
    <!-- printing out the date and time along with the story -->
-
-
+ 
   </blockquote>
 </div>
 </div>
@@ -50,10 +64,33 @@
     {% endfor %}
 
   {% endif %}
-</center>
+  </center>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+
+<script>
+<!-- Functions navigating around webpage through the navbar-->
+   $("#logo").click(function(e){
+      e.preventDefault();
+      window.location ="/";
+    });
+   $("#home").click(function(e){
+      e.preventDefault();
+      window.location ="/";
+    });
+    $("#about").click(function(e){
+      e.preventDefault();
+      window.location ="/about";
+    });
+      $("#stories").click(function(e){
+      e.preventDefault();
+      window.location ="/stories";
+    });
+</script>
 
 
 </body>

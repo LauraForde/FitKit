@@ -13,20 +13,18 @@ db = couch['people']
 
 @app.route("/")
 def route():
-    return render_template("home.html")
+    return render_template("index.html")
 	
 
-@app.route("/home", methods=['GET','POST'])
+@app.route("/home")
 def hello():
 
-    rows = db.view('_all_docs', include_docs = True)
+    rows = db.view('_all_docs', keys=['person'], include_docs = True)
     docs = [row.doc for row in rows]
     post = json.dumps((docs))
     poster = json.loads(post)
     poster.reverse()
-    return render_template("home.html", people = poster)
-
-
+    return render_template("home.html", ppl = poster)
 
 if __name__ == "__main__":
     app.run(debug = False)

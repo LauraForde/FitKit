@@ -1,5 +1,7 @@
 import couchdb
 
+couch = couchdb.Server()
+
 couch = couchdb.Server('http://localhost:5984')
 
 # Use existing datbase
@@ -10,12 +12,9 @@ if dbname in couch:
 else:
     db = couch.create(dbname)
 
-doc = {'person': 'Riona'}
-
 db = couch['people']
-doc = {'person': 'Ervin'}
-
-for item in db.view('designDoc/new-view'):
-    print(item.key, item.id, item.value)
+doc = {'person': 'Riona'}
+doc1 = {'person': 'Ervin'}
 
 db.save(doc)
+db.save(doc1)
