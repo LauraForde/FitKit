@@ -6,10 +6,10 @@ import json
 from flask import Flask, render_template
 from flask import request
 
+app = fl.Flask(__name__)
+
 couch = couchdb.Server('http://localhost:5984')
 db = couch['people']
-
-app = fl.Flask(__name__)
 
 @app.route("/")
 def route():
@@ -26,4 +26,6 @@ def hello():
     poster.reverse()
     return render_template("home.html", people = poster)
 
-app.run(debug = False, host="0.0.0.0")
+
+if __name__ == "__main__":
+    app.run(debug = False)
