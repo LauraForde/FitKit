@@ -32,40 +32,6 @@
 </nav>
 
 
-  <center>
-    <h2 style="color: red">
-     <i><b>
-        All Stories
-      </b> </i>
-    </h2>
-    <div></div>
-
-    <!-- Adapted from https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates -->
-
-<!-- if there are any stories in the database print them out -->
-  {% if ppl %}
-
-<!--looping out each story in the database -->
-    {% for p in ppl %} 
-    
-  
-      <div class="card card-outline-danger text-xs-center">
-      <div class="card-block" style="width: 800px;">
-      <blockquote class="card-blockquote" >
-      <!-- Printing out the story -->
-   <li class="list-group-item">{{ p.person }} </li>
-   <!-- printing out the date and time along with the story -->
- 
-  </blockquote>
-</div>
-</div>
-
-
-    {% endfor %}
-
-  {% endif %}
-  </center>
-
 
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

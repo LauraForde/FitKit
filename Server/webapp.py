@@ -11,20 +11,20 @@ app = fl.Flask(__name__)
 couch = couchdb.Server('http://localhost:5984')
 db = couch['people']
 
-@app.route("/")
+@app.route('/')
 def route():
-    return render_template("index.html")
+    return render_template('home.html')
 	
 
 @app.route("/home")
 def hello():
-
-    rows = db.view('_all_docs', keys=['person'], include_docs = True)
+    
+    rows = db.view('_all_docs', include_docs = True)
     docs = [row.doc for row in rows]
     post = json.dumps((docs))
     poster = json.loads(post)
     poster.reverse()
-    return render_template("home.html", ppl = poster)
+    return render_template("index.html", ppl = poster)
 
 if __name__ == "__main__":
     app.run(debug = False)
