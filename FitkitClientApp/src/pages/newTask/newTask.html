@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Add New Task
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+  
+  <ion-content>
+      <br>
+      
+    <div class="list">
+        <!--where user inputs task information-->
+      <label class="item item-input item-stacked-label">
+       <span class="input-label">I Need to...</span>
+        <input type="text" [(ngModel)] ="todo" placeholder="Enter a task here"> 
+      </label>
+        
+    </div>
+      <!--saving task button and adding to the ToDoList-->
+  
+        <button ion-button color="light" (click)="addTask()">
+      Add to My ToDo List
+    </button>
+      <div>
+      
+      </div>
+      <br>
+     
+      <ion-list>
+        <ion-item-sliding *ngFor="let t of todos">
+            <ion-item>
+                {{t}}
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="delete(t)">
+                    <ion-icon name="trash"></ion-icon> Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+
+
+
