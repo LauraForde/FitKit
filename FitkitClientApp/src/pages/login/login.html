@@ -9,12 +9,14 @@
   <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
     <ion-row>
       <ion-col>
+          
         <ion-list inset>
+            
           <ion-item>
-            <ion-input placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)]="username" #email></ion-input>
+            <ion-input placeholder="Email" name="username" id="loginField" type="text" required #username ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
+            <ion-input placeholder="Password" name="password" id="passwordField" type="password" required #password ></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -22,7 +24,7 @@
     <ion-row>
       <ion-col>
         <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-        <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Login
+        <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid" (click)="signIn()">Login
         </button>
       </ion-col>
     </ion-row>
