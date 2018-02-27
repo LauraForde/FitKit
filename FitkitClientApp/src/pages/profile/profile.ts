@@ -8,8 +8,10 @@ import { NavController } from 'ionic-angular';
 })
 export class ProfilePage {
 
+    placeholder;
   constructor(public navCtrl: NavController) {
 
+  //  this.placeholder = "../src/assets/imgs/placeholder.png";
   }
   
  
