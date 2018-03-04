@@ -17,16 +17,21 @@
 .ios, .md {
     
     ion-content{
-        background-color: darkcyan;
+         
         text-align: center;
         
         
     }
+    .toolbar-background {
+        background-color: cadetblue;
+        text-align: center;
+      }
  .tabs .tabbar {
-      background-color: transparent;
+      background-color: cadetblue;
     }
     .ion-list{
         background-color: transparent;
     }
+    
     
 }

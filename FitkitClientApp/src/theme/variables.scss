@@ -32,6 +32,11 @@ $app-direction: ltr;
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
+$text-color: #048DC4;
+
+
+@import url(http://fonts.googleapi+s.com/css?family=Oxygen);
+$font-family-base: "Courier", fantasy !default;
 
 $colors: (
   primary:    #488aff,
@@ -39,7 +44,10 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
+  
 );
+
+
 
 
 // App iOS Variables
