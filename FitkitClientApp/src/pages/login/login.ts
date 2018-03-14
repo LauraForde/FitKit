@@ -19,7 +19,13 @@ export class LoginPage {
   login(){
     this.http.get("http://54.68.14.217:5000/people").subscribe((response ) =>{
       console.log(response.json);
-      
+     // console.log(JSON.parse);
+
+       /* for (var person in response.json)
+        {
+         
+        }
+      */
     })
   }
 
