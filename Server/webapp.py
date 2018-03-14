@@ -9,22 +9,24 @@ from flask import request
 app = fl.Flask(__name__)
 
 couch = couchdb.Server('http://localhost:5984')
-db = couch['login']
+db = couch['people']
 
 @app.route('/')
 def route():
     return render_template('home.html')
 	
 
-@app.route("/people")
+@app.route("/people", methods = ['GET'])
 def hello():
+    docs = []
     
     rows = db.view('_all_docs', include_docs = True)
     docs = [row.doc for row in rows]
-    post = json.dumps((docs))
-    poster = json.loads(post)
-    poster.reverse()
-    return (ppl = poster)
+    # post = json.dumps((docs))
+    # poster = json.loads(post)
+    # poster.reverse()
+    
 
+    return json.dumps(docs)
 if __name__ == "__main__":
     app.run(debug = False, host="0.0.0.0")
