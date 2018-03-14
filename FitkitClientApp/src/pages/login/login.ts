@@ -8,7 +8,7 @@ import { Http } from '@angular/http';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-
+ 
   constructor(public navCtrl: NavController, private http:Http) {
     
     
@@ -17,10 +17,9 @@ export class LoginPage {
   
   
   login(){
-    this.http.get("http://54.68.14.217:5000/people").subscribe((result ) =>{
-       console.log(result.json);
-       console.log(result.status);
-       console.log(result.text);
+    this.http.get("http://54.68.14.217:5000/people").subscribe((response ) =>{
+      console.log(response.json);
+      
     })
   }
 
