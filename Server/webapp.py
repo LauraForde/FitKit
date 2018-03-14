@@ -24,7 +24,7 @@ def hello():
     post = json.dumps((docs))
     poster = json.loads(post)
     poster.reverse()
-    return render_template("people.html", ppl = poster)
+    return (ppl = poster)
 
 if __name__ == "__main__":
     app.run(debug = False, host="0.0.0.0")
