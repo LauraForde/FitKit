@@ -12,7 +12,7 @@ app = fl.Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins":"*"}})
 
 couch = couchdb.Server('http://localhost:5984')
-db = couch['people']
+db = couch['login']
 
 @app.route('/')
 def route():
