@@ -12,7 +12,9 @@ import { RegisterPage } from '../pages/register/register';
 import { ProfilePage } from '../pages/profile/profile';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
+
+import {peopleData } from '../providers/people'
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { HttpModule } from '@angular/http'
   ],
   providers: [
     StatusBar,
+    peopleData,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

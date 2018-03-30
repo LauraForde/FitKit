@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
+import { Http , Headers} from '@angular/http';
 
+import {peopleData} from '../../providers/people'
+
+import { person } from '../../objects/person'
 
 @Component({
   selector: 'page-profile',
@@ -9,11 +13,21 @@ import { NavController } from 'ionic-angular';
 export class ProfilePage {
 
     placeholder;
-  constructor(public navCtrl: NavController) {
 
-  //  this.placeholder = "../src/assets/imgs/placeholder.png";
+    ppl: any;
+
+  constructor(public navCtrl: NavController, public peopleData: peopleData, private http: Http, public navParams: NavParams) {
+    this.getPerson();
   }
-  
- 
+getPerson()
+{
+  this.peopleData.getPeople().subscribe(
+    data => this.ppl = data,
+    err => console.log("error"),
+    () => console.log("fin")
+  );
+}
+
+
 
 }
