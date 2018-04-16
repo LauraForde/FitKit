@@ -16,7 +16,8 @@ export class ProfilePage {
 
     ppl: any;
 
-  constructor(public navCtrl: NavController, public peopleData: peopleData, private http: Http, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public peopleData: peopleData, private http: Http, 
+    public navParams: NavParams) {
     this.getPerson();
   }
 getPerson()
