@@ -11,10 +11,10 @@
 
 
   
-  <ion-content>
+ <!-- <ion-content>
      
       <ion-list>
-        <ion-item-sliding *ngFor="let i of items">
+       <!-- <ion-item-sliding *ngFor="let i of items">
             <ion-item>
                 {{i.name}}
             </ion-item>
@@ -23,10 +23,23 @@
                 <button ion-button color="danger" (click)="delete(t)">
                     <ion-icon name="trash"></ion-icon> Delete
                 </button>
-            </ion-item-options> -->
-        </ion-item-sliding>
+            </ion-item-options> 
+        </ion-item-sliding>-->
+   
+  <ion-content>
+  <ion-list>
+  <ion-card *ngFor="let i of items">
+        <img   src="assets/imgs/default.png">
+        <ion-card-content >
+          <ion-card-title>
+            {{i.name}}
+            </ion-card-title>
+          <p>
+            item info here
+          </p>
+        </ion-card-content>
+      </ion-card>
     </ion-list>
-  </ion-content>
-
+    </ion-content>
 
 
