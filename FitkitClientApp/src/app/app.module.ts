@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { saleItemsPage } from '../pages/saleItems/saleItems';
+import {gymBuddyPage} from '../pages/gymBuddy/gymBuddy';
 import { mapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -17,10 +18,12 @@ import { HttpModule } from '@angular/http';
 import {peopleData } from '../providers/people'
 import {itemData } from '../providers/items'
 import { Geolocation } from '@ionic-native/geolocation';
+import { userData } from '../providers/users';
 
 @NgModule({
   declarations: [
     MyApp,
+    gymBuddyPage,
     saleItemsPage,
     HomePage,
     TabsPage,
@@ -37,6 +40,7 @@ import { Geolocation } from '@ionic-native/geolocation';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    gymBuddyPage,
     saleItemsPage,
     HomePage,
     mapPage,
@@ -48,6 +52,7 @@ import { Geolocation } from '@ionic-native/geolocation';
   providers: [
     StatusBar,
     Geolocation,
+    userData,
     peopleData,
     itemData,
     SplashScreen,

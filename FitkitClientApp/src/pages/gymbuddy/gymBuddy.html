@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Gym Buddy
+      </ion-title>
+      <button ion-button menuToggle>
+          <ion-icon name="more"></ion-icon></button>
+   
+    </ion-navbar>
+  </ion-header>
+  
+  
+    
+    <ion-content>
+       
+        <ion-list>
+          <ion-item-sliding *ngFor="let u of users">
+              <ion-item>
+                  {{u.name}}
+              </ion-item>
+  
+             <!-- <ion-item-options side="right">
+                  <button ion-button color="danger" (click)="delete(t)">
+                      <ion-icon name="trash"></ion-icon> Delete
+                  </button>
+              </ion-item-options> -->
+          </ion-item-sliding>
+      </ion-list>
+    </ion-content>
+  
+  
+  
+  
