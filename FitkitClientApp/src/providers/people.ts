@@ -4,7 +4,7 @@ import { Http , Headers} from "@angular/http";
 
 import 'rxjs/add/operator/map';
 
-import { person } from '../objects/person'
+//import { person } from '../objects/person'
 
 @Injectable()
 export class peopleData{
