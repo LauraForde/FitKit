@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { newTaskPage } from '../pages/newTask/newTask';
-import { ContactPage } from '../pages/contact/contact';
+import { saleItemsPage } from '../pages/saleItems/saleItems';
+import {gymBuddyPage} from '../pages/gymBuddy/gymBuddy';
+import { mapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -12,15 +13,21 @@ import { RegisterPage } from '../pages/register/register';
 import { ProfilePage } from '../pages/profile/profile';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
+
+import {peopleData } from '../providers/people'
+import {itemData } from '../providers/items'
+import { Geolocation } from '@ionic-native/geolocation';
+import { userData } from '../providers/users';
 
 @NgModule({
   declarations: [
     MyApp,
-    newTaskPage,
-    ContactPage,
+    gymBuddyPage,
+    saleItemsPage,
     HomePage,
     TabsPage,
+    mapPage,
     LoginPage,
     RegisterPage,
     ProfilePage
@@ -33,9 +40,10 @@ import { HttpModule } from '@angular/http'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    newTaskPage,
-    ContactPage,
+    gymBuddyPage,
+    saleItemsPage,
     HomePage,
+    mapPage,
     TabsPage,
     LoginPage,
     RegisterPage,
@@ -43,6 +51,10 @@ import { HttpModule } from '@angular/http'
   ],
   providers: [
     StatusBar,
+    Geolocation,
+    userData,
+    peopleData,
+    itemData,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

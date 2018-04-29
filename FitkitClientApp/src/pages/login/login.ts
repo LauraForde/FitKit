@@ -17,15 +17,13 @@ export class LoginPage {
   
   
   login(){
+    //Retrieving JSON from people db hosted on AWS
     this.http.get("http://54.68.14.217:5000/people").subscribe((response ) =>{
-      console.log(response.json);
-     // console.log(JSON.parse);
+    //printing to console the JSON from the people db  
+    console.log(response.json);
+    
 
-       /* for (var person in response.json)
-        {
-         
-        }
-      */
+     // console.log(JSON.parse); 
     })
   }
 

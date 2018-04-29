@@ -16,13 +16,19 @@
     </ion-thumbnail>
   </div>
   <div><ion-card>
-    <ion-card-header>
-      About ME
+    <ion-card-header  *ngFor="let p of ppl">
+      About  <h1>{{p.name}}</h1>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content >
 Fitness finatic! 5 years exp as PT
+<ion-item *ngFor="let p of ppl">
+  <h1>{{p.name}}</h1>
+</ion-item>
+
+
     </ion-card-content>
   </ion-card></div>
+  
  
 
   </ion-content>
