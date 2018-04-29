@@ -6,36 +6,65 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  REGISTER HERE
-    
-    
-    <ion-list>
 
-  <ion-item>
-    <ion-label floating>First Name</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-        
-<ion-item>
-    <ion-label floating>Last Name</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-        
+      <h3 text-center>Registration Form</h3>
+      <small text-center>Enter your details below</small>
+
+      <form  >
+      <ion-list>
+
         <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-        
-        
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
+          <ion-label floating>First Name</ion-label>
+          <ion-input type="text" [(ngModel)]="user.firstname" name="user.firstname"></ion-input>
+        </ion-item>
 
-</ion-list>
-    
-     
-        <button ion-button class="submit-btn" full type="submit" (click)="signUp()">Register
-        </button>
-    
+        <ion-item>
+          <ion-label floating>Last Name</ion-label>
+          <ion-input type="text" [(ngModel)]="user.surname" name="user.surname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>email</ion-label>
+          <ion-input type="email" [(ngModel)]="user.email" name="user.email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" [(ngModel)]="user.username" name="user.username"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="user.password" name="user.password"></ion-input>
+        </ion-item>
+
+        <br/>
+
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="user.gender" name="user.gender">
+            <ion-option value="male">Male</ion-option>
+            <ion-option value="female">Female</ion-option>
+          </ion-select>
+        </ion-item>
+        <br/>
+        <ion-item>
+          <ion-label>D.O.B</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY"  [(ngModel)]="user.dob" name="user.dob"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Quick Description</ion-label>
+          <ion-input type="text" rows="3" [(ngModel)]="user.bio" name="user.bio"></ion-input>
+        </ion-item>
+
+      </ion-list>
+      <button ion-button class="submit-btn" full type="submit" (click)="signUp()">Register
+      </button>
+      </form>
+
+
+
+      
 </ion-content>

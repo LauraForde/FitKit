@@ -4,15 +4,22 @@ import { Http , Headers} from "@angular/http";
 
 import 'rxjs/add/operator/map';
 
-//import { person } from '../objects/person'
+import { Person } from '../objects/person'
 
 @Injectable()
 export class peopleData{
 
     constructor(public http: Http){ }
+    
+    url: String = "54.202.138.53:2020";
 
     getPeople(){
         return this.http.get("http://54.68.14.217:5000/people")
+        .map(response =>response.json());
+    }
+
+    postPeople(person: Person){
+        return this.http.post("http://54.68.14.217:5000/people", person)
         .map(response =>response.json());
     }
     /*

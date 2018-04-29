@@ -35,25 +35,20 @@
               <ion-avatar item-start >
                     <img   src="assets/imgs/placeholder.png">
               </ion-avatar>
-              <h2>{{u.name}}</h2>
-              <p>D.O.B</p>
+              <h2>{{u.username}}</h2>
+              <p>{{u.dob}}</p>
             </ion-item>
           
             <ion-card-content>
-              <p>BIO</p>
+              <p>{{u.bio}}</p>
             </ion-card-content>
           
             <ion-row>
               <ion-col>
-                <button ion-button icon-left clear small>
-                  <ion-icon name="text"></ion-icon>
-                  <div>4 Comments</div>
+              
+                <button ion-item (click)="deleteUser()">Delete
                 </button>
-              </ion-col>
-              <ion-col center text-center>
-                <ion-note>
-                  time
-                </ion-note>
+                
               </ion-col>
             </ion-row>
           

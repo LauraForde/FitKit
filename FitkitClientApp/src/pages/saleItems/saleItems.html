@@ -29,14 +29,15 @@
   <ion-content>
   <ion-list>
   <ion-card *ngFor="let i of items">
-        <img   src="assets/imgs/default.png">
+        <img   src="assets/imgs/tm.jpg">
         <ion-card-content >
           <ion-card-title>
-            {{i.name}}
+            {{i.name}} |<b>{{i.price}}</b> 
             </ion-card-title>
           <p>
-            item info here
+              {{i.description}}
           </p>
+         
         </ion-card-content>
       </ion-card>
     </ion-list>

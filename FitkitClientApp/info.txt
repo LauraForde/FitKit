@@ -1,3 +1,9 @@
+Node version: v7.6.0
+
+Cordova version: 7.1.0
+
+Config.xml file: 
+
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MyApp</name>
@@ -87,3 +93,11 @@
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 </widget>
+
+
+Plugins: 
+
+cordova-plugin-camera,cordova-plugin-email-composer,cordova-plugin-geolocation
+
+No Platforms Currently Installed
+

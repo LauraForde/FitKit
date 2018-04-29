@@ -14,13 +14,12 @@ export class gymBuddyPage {
 
     constructor(public navCtrl: NavController, public userData: userData, private http: Http, 
         public navParams: NavParams) {
-            console.log("in gym buddy");
         this.getUsers();
       }
 
     getUsers()
     {
-        console.log("In function");
+     
       this.userData.getUsers().subscribe(
         data => {
             this.users = data;
@@ -30,4 +29,21 @@ export class gymBuddyPage {
         () => console.log("fin")
       );
     }
+
+    deleteUser(id: String)
+    {
+      console.log("dU");
+      this.userData.deletePerson(this.users.id).subscribe(
+        data =>{
+      
+            this.users = id;
+        },
+         err => console.log("error"),
+        () => console.log("fin")
+      );
+    }
+
+
+  
+
 } 
