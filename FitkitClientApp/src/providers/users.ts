@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { Events } from 'ionic-angular';
 
 import { Person } from "../objects/person";
+import { Item } from "../objects/item";
 
 
 
@@ -16,9 +17,6 @@ export class userData{
     constructor(public http: Http, public storage: Storage,  public events: Events){ }
 
     login(user: Person){
-        //Save user to storage, trigger login in event
-        this.storage.set('hasLoggedIn', true);
-
         this.events.publish('user:login');
       }
     

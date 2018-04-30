@@ -29,8 +29,6 @@ export class ProfilePage {
   {
     this.getPerson();
 
-
-
   }
 getPerson()
 {

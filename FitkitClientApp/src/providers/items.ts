@@ -1,3 +1,4 @@
+
 import { Injectable } from "@angular/core";
 import { Http , Headers} from "@angular/http";
 
@@ -5,6 +6,7 @@ import { Http , Headers} from "@angular/http";
 import 'rxjs/add/operator/map';
 
 import { Person } from '../objects/person'
+import { Item } from '../objects/item'
 
 @Injectable()
 export class itemData{
@@ -19,6 +21,19 @@ export class itemData{
         .map(response =>response.json());
     }
 
+
+
+    addItem(item: string){
+        console.log(item);
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post("http://54.68.14.217:5000/newPost", item, 
+        {
+          headers: headers
+        })
+        .map(response => response.json());
+
+      }
 
     deleteItem(id: String){
         return this.http.delete("http://54.68.14.217:5000/person" + "/" + name)

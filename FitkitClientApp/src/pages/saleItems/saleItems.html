@@ -25,7 +25,7 @@
                 </button>
             </ion-item-options> 
         </ion-item-sliding>-->
-   
+  <!-- 
   <ion-content>
   <ion-list>
   <ion-card *ngFor="let i of items">
@@ -41,6 +41,52 @@
         </ion-card-content>
       </ion-card>
     </ion-list>
+    </ion-content>
+  -->
+
+
+    <ion-content>
+
+    <form  >
+        <ion-list>
+
+            <ion-item>
+                <ion-label floating>ID</ion-label>
+                <ion-input type="text" [(ngModel)]="items.shopID" name="items.shopID"></ion-input>
+              </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Product Name</ion-label>
+            <ion-input type="text" [(ngModel)]="items.prodName" name="items.prodName"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Price</ion-label>
+            <ion-input type="text" [(ngModel)]="items.price" name="items.price"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Product Description</ion-label>
+            <ion-input type="text" [(ngModel)]="items.des" name="items.des"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label floating>Sellers Name</ion-label>
+            <ion-input type="text" [(ngModel)]="items.sellName" name="items.sellName"></ion-input>
+          </ion-item>
+  
+  
+          <ion-item>
+            <ion-label floating>Contact Number</ion-label>
+            <ion-input type="text" [(ngModel)]="items.num" name="items.num"></ion-input>
+          </ion-item>
+  
+     
+         
+        </ion-list>
+        <button ion-button class="submit-btn" full type="submit" (click)="addItems()">Add Item
+        </button>
+        </form>
     </ion-content>
 
 
