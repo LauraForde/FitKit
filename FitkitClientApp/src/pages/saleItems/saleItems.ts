@@ -24,4 +24,5 @@ export class saleItemsPage {
         () => console.log("fin")
       );
     }
+  
 } 
